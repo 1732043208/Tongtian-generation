@@ -1,0 +1,57 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/init"
+		},
+		{
+			"path": "pages/index/guide"
+		},
+		{
+			"path": "pages/index/home"
+		},
+		{
+			"path": "pages/order/order"
+		},
+		{
+			"path": "pages/message/message"
+		},
+		{
+			"path": "pages/mine/mine"
+		}
+	],
+	"globalStyle": {
+		"navigationStyle": "custom",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"selectedColor": "#5C90FD",
+		"color": "#C1C1C0",
+		"borderStyle": "black",
+		"backgroundColor": "#F7F7F7",
+		"list": [{
+				"pagePath": "pages/index/home",
+				"iconPath": "static/icons/tabbar/fadan.png",
+				"selectedIconPath": "static/icons/tabbar/fadan_active.png",
+				"text": "发单"
+			}, {
+				"pagePath": "pages/order/order",
+				"iconPath": "static/icons/tabbar/jiedan.png",
+				"selectedIconPath": "static/icons/tabbar/jiedan_active.png",
+				"text": "接单"
+			}, {
+				"pagePath": "pages/message/message",
+				"iconPath": "static/icons/tabbar/message.png",
+				"selectedIconPath": "static/icons/tabbar/message_active.png",
+				"text": "消息"
+			},
+			{
+				"pagePath": "pages/mine/mine",
+				"iconPath": "static/icons/tabbar/mine.png",
+				"selectedIconPath": "static/icons/tabbar/mine_active.png",
+				"text": "我的"
+			}
+		]
+	},
+	"uniIdRouter": {}
+}
