@@ -21,4 +21,8 @@
 		box-sizing: border-box;
 		padding: 10rpx;
 	}
+	.status_bar {
+	        height: var(--status-bar-height);
+	        width: 100%;
+	    }
 </style>

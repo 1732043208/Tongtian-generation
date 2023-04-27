@@ -13,7 +13,7 @@
 					</view>
 					<text class="game-name">{{item.name}}</text>
 				</view>
-				<view class="game-box-item">
+				<view class="game-box-item" @click="moreClick">
 					<!-- 占位符（弹性布局撑开图标） start-->
 					<view></view>
 					<!-- 占位符（弹性布局撑开图标） end-->
@@ -23,8 +23,31 @@
 					<text>更多</text>
 				</view>
 			</view>
+			<!-- 普通弹窗 -->
+			<uni-popup ref="popup" background-color="#fff">
+				<view class="popup-content">
+					<view>选择游戏</view>
+					<view class="game-box">
+						<view v-for="(item,index) in gameList" :key="index" class="game-box-item">
+							<view class="game-item">
+								<image :src="item.url" mode="widthFix" />
+							</view>
+							<text class="game-name">{{item.name}}</text>
+						</view>
+						<view class="game-box-item" @click="moreClick">
+							<!-- 占位符（弹性布局撑开图标） start-->
+							<view></view>
+							<!-- 占位符（弹性布局撑开图标） end-->
+							<view class="game-item">
+								<image src="/static/icons/More.png" mode="widthFix" style="width: 60rpx;" />
+							</view>
+							<text>更多</text>
+						</view>
+					</view>
+				</view>
+			</uni-popup>
 		</view>
-		<view class="line-box"></view>
+		<view class="line-box" />
 	</view>
 </template>
 
@@ -32,7 +55,9 @@
 	import {
 		defineComponent,
 		reactive,
-		toRefs
+		toRefs,
+		ref,
+		onMounted
 	} from 'vue'
 	export default defineComponent({
 		setup() {
@@ -42,8 +67,16 @@
 					name: '王者荣耀'
 				}]
 			})
+			const popup = ref(null)
+
+			// 更多按钮点击事件
+			const moreClick = () => {
+				popup.value.open('bottom')
+			}
 			return {
-				...toRefs(data)
+				...toRefs(data),
+				moreClick,
+				popup
 			}
 		}
 	})
@@ -100,5 +133,12 @@
 		width: 100vw;
 		height: 16rpx;
 		background-color: #F6F6F6;
+	}
+
+	.popup-content {
+		padding: 15px;
+		height: 500rpx;
+		background-color: #fff;
+		text-align: center;
 	}
 </style>

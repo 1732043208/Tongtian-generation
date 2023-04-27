@@ -1,8 +1,30 @@
 <template>
-	<view>接单</view>	
+	<view class="status_bar"/>
+	<view>
+		<BottomTabbar :current="1"></BottomTabbar>
+	</view>
 </template>
 
 <script>
+	import {
+		onShow
+	} from "@dcloudio/uni-app";
+	import {
+		defineComponent
+	} from 'vue'
+	import BottomTabbar from '../../components/BottomTabbar.vue'
+	export default defineComponent({
+		components: {
+			BottomTabbar
+		},
+		setup() {
+			onShow(() => {
+				uni.hideTabBar({
+					animation: false
+				})
+			});
+		}
+	})
 </script>
 
 <style>

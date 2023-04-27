@@ -1,4 +1,5 @@
 <template>
+	<view class="status_bar"/>
 	<view class="content">
 		<!-- 顶部tabbar栏 -->
 		<Tabbar title="通天代" label="昨日累计服务 35896 人">
@@ -17,7 +18,9 @@
 			</swiper-item>
 		</swiper>
 		<!-- 游戏选择模块 -->
-		<GameSelectBox/>
+		<GameSelectBox />
+
+		<BottomTabbar :current="0"></BottomTabbar>
 	</view>
 </template>
 
@@ -25,20 +28,30 @@
 	import {
 		defineComponent,
 		reactive,
-		toRefs
+		toRefs,
+		onMounted
 	} from 'vue'
+	import {
+		onShow
+	} from "@dcloudio/uni-app";
 	import Tabbar from '../../components/Tabbar.vue'
+	import BottomTabbar from '../../components/BottomTabbar.vue'
 	import GameSelectBox from './childs/GameSelectBox.vue'
 	export default defineComponent({
 		components: {
 			Tabbar,
-			GameSelectBox
+			GameSelectBox,
+			BottomTabbar
 		},
 		setup() {
 			const data = reactive({
 				bannerList: ['green', 'yellow', 'blue']
 			})
-
+			onShow(() => {
+				uni.hideTabBar({
+					animation: false
+				})
+			});
 			return {
 				...toRefs(data)
 			}
@@ -47,6 +60,11 @@
 </script>
 
 <style lang="less" scoped>
+	.status_bar {
+		height: var(--status-bar-height);
+		width: 100%;
+	}
+
 	.content {
 
 		.tabbar-button {

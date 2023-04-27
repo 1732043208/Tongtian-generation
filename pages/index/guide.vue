@@ -39,7 +39,7 @@
 			})
 			// 立即体验按钮点击事件
 			const pushHome = () => {
-				uni.navigateTo({
+				uni.switchTab({
 					url: '/pages/index/home'
 				})
 			}
