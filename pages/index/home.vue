@@ -1,5 +1,5 @@
 <template>
-	<view class="status_bar"/>
+	<view class="status_bar" />
 	<view class="content">
 		<!-- 顶部tabbar栏 -->
 		<Tabbar title="通天代" label="昨日累计服务 35896 人">
@@ -19,7 +19,7 @@
 		</swiper>
 		<!-- 游戏选择模块 -->
 		<GameSelectBox />
-
+		<Recommend></Recommend>
 		<BottomTabbar :current="0"></BottomTabbar>
 	</view>
 </template>
@@ -37,15 +37,19 @@
 	import Tabbar from '../../components/Tabbar.vue'
 	import BottomTabbar from '../../components/BottomTabbar.vue'
 	import GameSelectBox from './childs/GameSelectBox.vue'
+	import Recommend from './childs/Recommend.vue'
 	export default defineComponent({
 		components: {
 			Tabbar,
 			GameSelectBox,
-			BottomTabbar
+			BottomTabbar,
+			Recommend
 		},
 		setup() {
 			const data = reactive({
-				bannerList: ['green', 'yellow', 'blue']
+				bannerList: ['green', 'yellow', 'blue'],
+				tabValue: ['示例1', '示例2'],
+				tabIndex: 0
 			})
 			onShow(() => {
 				uni.hideTabBar({

@@ -12,17 +12,21 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="scss">
+	@import "@/uni_modules/uview-plus/index.scss";
+
 	* {
 		margin: 0;
 		padding: 0;
 	}
-	body{
+
+	body {
 		box-sizing: border-box;
 		padding: 10rpx;
 	}
+
 	.status_bar {
-	        height: var(--status-bar-height);
-	        width: 100%;
-	    }
+		height: var(--status-bar-height);
+		width: 100%;
+	}
 </style>
