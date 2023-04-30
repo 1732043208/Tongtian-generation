@@ -17,6 +17,28 @@
 		},
 		{
 			"path": "pages/mine/mine"
+		},
+		{
+			"path": "pages/release-order/ReleaseOrder",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "王者荣耀代练",
+				"navigationBarBackgroundColor": "#FFFFFF"
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "sss",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"type": "close"
+						}]
+					}
+				}
+			}
 		}
 	],
 	"globalStyle": {
