@@ -22,29 +22,36 @@
 			"path": "pages/release-order/ReleaseOrder",
 			"style": {
 				"navigationStyle": "default",
-				"navigationBarTitleText": "王者荣耀代练",
-				"navigationBarBackgroundColor": "#FFFFFF"
+				"navigationBarTitleText": "王者荣耀代练"
 			}
 		},
 		{
 			"path": "pages/login/login",
 			"style": {
-				"navigationStyle": "custom",
-				"navigationBarTitleText": "sss",
+				"navigationStyle": "default",
+				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
-							"type": "close"
+							"text": "注册",
+							"fontSize": "32rpx"
 						}]
 					}
 				}
+			}
+		},{
+			"path": "pages/login/register",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "注册"
 			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black", //状态栏字体颜色
 		"navigationStyle": "custom",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"navigationBarBackgroundColor": "#FFFFFF"
 	},
 	"tabBar": {
 		"selectedColor": "#79D5AD",
